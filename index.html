@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#263b31">
+  <title>Minecraft: Mob Hunter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <main id="game">
+    <header class="topbar">
+      <button class="square-btn" id="homeBtn" aria-label="Головне меню">⌂</button>
+      <div class="stats">
+        <div class="stat"><span>✦</span><b id="score">0</b></div>
+        <div class="stat"><span>◷</span><b id="time">60</b></div>
+      </div>
+      <button class="square-btn" id="soundBtn" aria-label="Звук">🔊</button>
+    </header>
+
+    <div class="best">НАЙКРАЩИЙ РЕЗУЛЬТАТ: <b id="best">0</b></div>
+
+    <section id="menu" class="overlay">
+      <div class="menu-card">
+        <div class="pickaxe">⛏️</div>
+        <h1>MOB HUNTER</h1>
+        <p>Полюй на мобів у шахті Minecraft!</p>
+        <div class="rules">
+          <span>🧟 Злі моби — +10</span>
+          <span>🐑 Мирні моби — бонус +5</span>
+          <span>🎯 Один моб за раз</span>
+        </div>
+        <button class="main-btn" id="startBtn">ГРАТИ</button>
+      </div>
+    </section>
+
+    <section id="finish" class="overlay hidden">
+      <div class="menu-card">
+        <div class="pickaxe">🏆</div>
+        <h2>ГРУ ЗАВЕРШЕНО!</h2>
+        <p>Твій результат</p>
+        <div class="final-score" id="finalScore">0</div>
+        <p id="recordText"></p>
+        <button class="main-btn" id="againBtn">ЩЕ РАЗ</button>
+      </div>
+    </section>
+
+    <section class="mine" aria-label="Ігрове поле">
+      <div class="mine-wall"></div>
+      <div class="mine-glow"></div>
+      <div class="holes" id="holes">
+        <button class="hole" data-hole="0" aria-label="Отвір 1"><span class="mob"></span></button>
+        <button class="hole" data-hole="1" aria-label="Отвір 2"><span class="mob"></span></button>
+        <button class="hole" data-hole="2" aria-label="Отвір 3"><span class="mob"></span></button>
+        <button class="hole" data-hole="3" aria-label="Отвір 4"><span class="mob"></span></button>
+        <button class="hole" data-hole="4" aria-label="Отвір 5"><span class="mob"></span></button>
+        <button class="hole" data-hole="5" aria-label="Отвір 6"><span class="mob"></span></button>
+        <button class="hole" data-hole="6" aria-label="Отвір 7"><span class="mob"></span></button>
+        <button class="hole" data-hole="7" aria-label="Отвір 8"><span class="mob"></span></button>
+        <button class="hole" data-hole="8" aria-label="Отвір 9"><span class="mob"></span></button>
+      </div>
+      <div class="floor"></div>
+      <div class="bucket-wrap">
+        <div class="bucket">
+          <div class="water"></div>
+          <div class="bucket-rim"></div>
+        </div>
+        <div class="hand">🟫</div>
+      </div>
+      <div id="projectiles"></div>
+      <div id="toast"></div>
+    </section>
+
+    <footer class="bottom-info">
+      <span>🪣 ТВОЄ ВІДРО</span>
+      <span>Натискай на мобів!</span>
+    </footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
